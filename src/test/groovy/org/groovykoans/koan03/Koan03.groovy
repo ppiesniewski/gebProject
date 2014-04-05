@@ -52,11 +52,11 @@ class Koan03 extends GroovyTestCase {
         // want to generate a setter because it's a read-only field? Just mark it with 'final'. Groovy will understand.
 
         // Try to modify Ken's ssn. You should get a ReadOnlyPropertyException.
-        def person = new GroovyPerson('Ken', 'Kousen', '7878')
+        final person = new GroovyPerson('Ken', 'Kousen', '7878')
         def failed = true
         shouldFail (ReadOnlyPropertyException) {
             // ------------ START EDITING HERE ----------------------
-            
+            failed  = true
             // ------------ STOP EDITING HERE  ----------------------
             failed = false
         }
